@@ -57,7 +57,7 @@ return {
 
 				sh = { "shfmt" },
 				bash = { "shfmt" },
-				zsh = { "shfmt" },
+				zsh = { "beautysh" },
 				toml = { "taplo" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
