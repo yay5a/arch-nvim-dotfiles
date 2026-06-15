@@ -47,7 +47,25 @@ km("i", "<C-c>", "<Esc>")
 km("n", "<C-c>", "<cmd>nohlsearch<CR>")
 
 -- run built-in lsp formatter on current buffer
-km("n", "<leader>f", vim.lsp.buf.format, { desc = "Format buffer" })
+km("n", "<leader>f", function()
+	require("conform").format({
+		async = true,
+		lsp_format = "fallback",
+	})
+end, { desc = "Format buffer" })
+
+-- Convert selected JSON key value pairs:
+-- "key": "value",
+-- into:
+-- key = "value"
+km("x", "<leader>jq", [[:s#^\(\s*\)"\([^"]\+\)":\s*\("[^"]\+"\),\?#\1\2 = \3#<CR>]], {
+	desc = "Convert selected JSON keys to assignments",
+})
+
+-- Same conversion across the whole file
+km("n", "<leader>jQ", [[:%s#^\(\s*\)"\([^"]\+\)":\s*\("[^"]\+"\),\?#\1\2 = \3#<CR>]], {
+	desc = "Convert file JSON keys to assignments",
+})
 
 -- substitute all matches in visual selection
 km("x", "<leader>sr", [[:s#]], {

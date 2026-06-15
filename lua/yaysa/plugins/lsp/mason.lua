@@ -57,6 +57,10 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"biome",
+				"shfmt",
+				"shellcheck",
+				"beautysh",
+				"shellharden",
 				"prettier",
 				"stylua",
 				"isort",

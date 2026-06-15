@@ -12,12 +12,12 @@ return {
 		default_file_explorer = true,
 		columns = {},
 		keymaps = {
-			['<C-h>'] = false,
-			['<C-l>'] = false,
-			['<C-c>'] = false,
-			['<C-r>'] = 'actions.refresh',
-			['<M-h>'] = { 'actions.select', opts = { horizontal = true } },
-			q = 'actions.close',
+			["<C-h>"] = false,
+			["<C-l>"] = false,
+			["<C-c>"] = false,
+			["<C-r>"] = "actions.refresh",
+			["<M-h>"] = { "actions.select", opts = { horizontal = true } },
+			q = "actions.close",
 		},
 		delete_to_trash = true,
 		skip_confirm_for_simple_edits = true,
@@ -26,14 +26,14 @@ return {
 		},
 	},
 	keys = {
-		{ '-', '<cmd>Oil<CR>', desc = 'Open parent directory' },
+		{ "-", "<cmd>Oil<CR>", desc = "Open parent directory" },
 		{
-			'<leader>-',
+			"<leader>-",
 			function()
-				require('oil').toggle_float()
+				require("oil").toggle_float()
 			end,
-			desc = 'Toggle Oil float',
+			desc = "Toggle Oil float",
 		},
-		{ '<leader>pv', '<cmd>Oil<CR>', desc = 'Open parent directory' },
+		{ "<leader>pv", "<cmd>Oil<CR>", desc = "Open parent directory" },
 	},
 }

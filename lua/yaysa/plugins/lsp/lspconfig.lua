@@ -40,10 +40,10 @@ return {
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 				opts.desc = "Show buffer diagnostics"
-				-- vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-				vim.keymap.set("n", "<leader>D", function()
-					require("snacks").picker.diagnostics_buffer()
-				end, opts)
+				vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+				-- vim.keymap.set("n", "<leader>D", function()
+				-- 	require("snacks").picker.diagnostics_buffer()
+				-- end, opts)
 
 				opts.desc = "Show line diagnostics"
 				vim.keymap.set("n", "df", function()
@@ -59,7 +59,17 @@ return {
 				end, opts)
 			end,
 		})
-
+		vim.api.nvim_create_autocmd("FileType", {
+			desc = "Start zshcs for zsh files",
+			pattern = "zsh",
+			callback = function(args)
+				vim.lsp.start({
+					name = "zshcs",
+					cmd = { "zshcs" },
+					root_dir = vim.fs.root(args.buf, { ".git" }) or vim.env.HOME,
+				})
+			end,
+		})
 		-- NOTE: Diagnostic Setup
 		-- Define sign icons for each severity
 		local signs = {

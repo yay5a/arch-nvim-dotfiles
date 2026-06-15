@@ -1,21 +1,42 @@
 local M = {}
 
+local LogoColor = {
+	royalBlue = "#1458E4",
+	skyBlue = "#179CF1",
+	goldYellowOrange = "#FAA40C",
+	hotOrange = "#F86017",
+	coralRed = "#F02F30",
+	magentaRed = "#D41C4E",
+	deepViolet = "#5F30A8",
+	mutedVioletBlue = "#5D5CA0",
+	tealBlueBlend = "#5F9AA0",
+	deepBlue = "#1535CA",
+	mutedRose = "#9F5D62",
+	magentaPurple = "#A92C6C",
+	oliveGoldBlend = "#9C9F5E",
+	purple = "#8B2C89",
+	softBlue = "#5AA2DB",
+	indigo = "#252BB7",
+	mediumBlue = "#3262B9",
+	paleOutlineHighlight = "#DEDFE9",
+}
+
 local C = {
-	yellow = "#FFDA63",
-	orange = "#FFA500",
-	cyan = "#46D2E8",
-	blue = "#1E90FF",
-	royal = "#7B68EE",
-	plum = "#DA70D6",
-	red = "#DC143C",
-	burgundy = "#8B0000",
-	text = "#F5F5F5",
-	muted = "#A9A9A9",
-	sel = "#2F4F4F",
-	magenta = "#DA70D6",
+	yellow = LogoColor.goldYellowOrange,
+	orange = LogoColor.hotOrange,
+	cyan = LogoColor.skyBlue,
+	blue = LogoColor.royalBlue,
+	royal = LogoColor.deepViolet,
+	plum = LogoColor.magentaPurple,
+	red = LogoColor.coralRed,
+	burgundy = LogoColor.magentaRed,
+	text = LogoColor.paleOutlineHighlight,
+	muted = LogoColor.mutedVioletBlue,
+	sel = LogoColor.deepBlue,
+	magenta = LogoColor.magentaPurple,
 	panel = "#16141f",
-	softviolet = "#B39DDB",
-	softcyan = "#7FDBFF",
+	softviolet = LogoColor.purple,
+	softcyan = LogoColor.mediumBlue,
 }
 -- local C = {
 --     base = '#191724',
@@ -294,7 +315,7 @@ function M.apply()
 	hi(0, "DiffAdd", { fg = C.cyan })
 	hi(0, "DiffChange", { fg = C.yellow })
 	hi(0, "DiffDelete", { fg = C.red })
-	hi(0, "DIFfText", { fg = C.blue, bold = true })
+	hi(0, "DiffText", { fg = C.blue, bold = true })
 
 	local bg_solid = SOLID
 	hi(0, "TelescopeNormal", { fg = C.text, bg = bg_solid })
