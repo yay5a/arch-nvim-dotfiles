@@ -1,0 +1,35 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Vim/Neovim temporary files
+*.swp
+*.swo
+*.swn
+*~
+*.tmp
+*.bak
+*.orig
+.netrwhist
+Session.vim
+
+# Local-only config/secrets
+.env
+.env.*
+!.env.example
+local.lua
+lua/**/local.lua
+after/**/local.lua
+
+# Generated directories, only relevant if they accidentally appear inside this repo
+undo/
+swap/
+backup/
+shada/
+lazy/
+mason/
+site/
+
+# Spell files: keep .add if you want your personal dictionary tracked,
+# ignore compiled generated spell files
+spell/*.spl
